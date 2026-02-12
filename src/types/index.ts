@@ -1,3 +1,9 @@
+export interface Category {
+  id: string;
+  slug: string;
+  icon: string;
+}
+
 export interface Tool {
   id: string;
   slug: string;
@@ -6,11 +12,3 @@ export interface Tool {
   keywords: string[];
   createdAt: string;
 }
-
-export interface Category {
-  id: string;
-  slug: string;
-  icon: string;
-}
-
-export type Locale = 'ja' | 'en';

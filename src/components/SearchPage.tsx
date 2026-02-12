@@ -20,7 +20,7 @@ export default function SearchPage({ query }: SearchPageProps) {
     ? tools.filter((tool) => {
         const nameMatch = t(`tools.${tool.slug}.name`).toLowerCase().includes(query);
         const descMatch = t(`tools.${tool.slug}.description`).toLowerCase().includes(query);
-        const keywordMatch = tool.keywords.some((kw) => kw.toLowerCase().includes(query));
+        const keywordMatch = tool.keywords.some((kw: string) => kw.toLowerCase().includes(query));
         return nameMatch || descMatch || keywordMatch;
       })
     : [];

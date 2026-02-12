@@ -1,4 +1,4 @@
-import { Tool } from '@/types';
+import { Tool } from '@/src/types';
 
 export const tools: Tool[] = [
   {
