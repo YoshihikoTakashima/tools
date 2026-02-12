@@ -2,6 +2,23 @@ import { Tool } from '@/src/types';
 
 export const tools: Tool[] = [
   {
+    id: 'history-calculator',
+    slug: 'history-calculator',
+    categorySlug: 'calculator',
+    isGlobal: true,
+    keywords: ['calculator', 'history', 'math', '計算機', '履歴', '電卓'],
+    createdAt: '2026-02-12',
+    isRecommended: true,
+  },
+  {
+    id: 'age-calculator',
+    slug: 'age-calculator',
+    categorySlug: 'calculator',
+    isGlobal: true,
+    keywords: ['age', 'birthday', 'years', '年齢', '誕生日', '生年月日'],
+    createdAt: '2026-02-12',
+  },
+  {
     id: 'tax-calculator',
     slug: 'tax-calculator',
     categorySlug: 'calculator',
@@ -15,14 +32,6 @@ export const tools: Tool[] = [
     categorySlug: 'calculator',
     isGlobal: true,
     keywords: ['discount', 'sale', 'price', '割引', 'セール', '値引き'],
-    createdAt: '2026-02-12',
-  },
-  {
-    id: 'age-calculator',
-    slug: 'age-calculator',
-    categorySlug: 'date',
-    isGlobal: true,
-    keywords: ['age', 'birthday', 'years', '年齢', '誕生日', '生年月日'],
     createdAt: '2026-02-12',
   },
   {

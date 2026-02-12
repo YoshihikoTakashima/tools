@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Grid, List } from 'lucide-react';
 import { categories } from '@/src/data/categories';
+import CategoryIcon from './CategoryIcon';
 import { tools } from '@/src/data/tools';
 
 export default function HomePage() {
@@ -34,7 +35,9 @@ export default function HomePage() {
               href={`/${locale}/category/${category.slug}`}
               className="p-4 sm:p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700"
             >
-              <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">{category.icon}</div>
+              <div className="mb-2 sm:mb-3">
+                <CategoryIcon slug={category.slug} className="w-8 h-8 sm:w-10 sm:h-10 text-blue-500" />
+              </div>
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 {t(`categories.${category.slug}.name`)}
               </h3>
@@ -86,8 +89,17 @@ export default function HomePage() {
             <Link
               key={tool.id}
               href={`/${locale}/tool/${tool.slug}`}
-              className="p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+              className={`p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg border transition-colors relative ${
+                tool.isRecommended
+                  ? 'border-blue-500 dark:border-blue-500 shadow-md'
+                  : 'border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500'
+              }`}
             >
+              {tool.isRecommended && (
+                <span className="absolute top-2 right-2 px-2 py-0.5 bg-blue-500 text-white text-xs rounded-full">
+                  おすすめ
+                </span>
+              )}
               <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">
                 {t(`tools.${tool.slug}.name`)}
               </h3>

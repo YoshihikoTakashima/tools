@@ -145,6 +145,10 @@
       "description": "ランダムなUUID (v4) を生成します",
       "count": "生成個数",
       "uuids": "生成されたUUID"
+    },
+    "history-calculator": {
+      "name": "履歴計算機",
+      "description": "計算履歴が残る電卓"
     }
   },
   "search": {

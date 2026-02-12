@@ -6,13 +6,13 @@ import { useState } from 'react';
 import { Grid, List } from 'lucide-react';
 import Breadcrumb from './Breadcrumb';
 import { tools } from '@/src/data/tools';
+import CategoryIcon from './CategoryIcon';
 
 interface CategoryPageProps {
   categorySlug: string;
-  categoryIcon: string;
 }
 
-export default function CategoryPage({ categorySlug, categoryIcon }: CategoryPageProps) {
+export default function CategoryPage({ categorySlug }: CategoryPageProps) {
   const t = useTranslations();
   const locale = useLocale();
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -29,7 +29,9 @@ export default function CategoryPage({ categorySlug, categoryIcon }: CategoryPag
       />
 
       <div className="mb-8">
-        <div className="text-5xl mb-4">{categoryIcon}</div>
+        <div className="mb-4">
+          <CategoryIcon slug={categorySlug} className="w-12 h-12 text-blue-500" />
+        </div>
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           {t(`categories.${categorySlug}.name`)}
         </h1>
@@ -72,8 +74,17 @@ export default function CategoryPage({ categorySlug, categoryIcon }: CategoryPag
           <Link
             key={tool.id}
             href={`/${locale}/tool/${tool.slug}`}
-            className="p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+            className={`p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg border transition-colors relative ${
+              tool.isRecommended
+                ? 'border-blue-500 dark:border-blue-500 shadow-md'
+                : 'border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500'
+            }`}
           >
+            {tool.isRecommended && (
+              <span className="absolute top-2 right-2 px-2 py-0.5 bg-blue-500 text-white text-xs rounded-full">
+                おすすめ
+              </span>
+            )}
             <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">
               {t(`tools.${tool.slug}.name`)}
             </h3>

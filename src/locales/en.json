@@ -145,6 +145,10 @@
       "description": "Generate random UUID (v4)",
       "count": "Count",
       "uuids": "Generated UUIDs"
+    },
+    "history-calculator": {
+      "name": "History Calculator",
+      "description": "Calculator with history tracking"
     }
   },
   "search": {

@@ -9,27 +9,26 @@ export default function DiscountCalculator() {
   const tc = useTranslations('common');
 
   const [originalPrice, setOriginalPrice] = useState('');
-  const [discountRate, setDiscountRate] = useState('');
+  const [discountRate, setDiscountRate] = useState('20');
   const [discountedPrice, setDiscountedPrice] = useState('');
   const [discountAmount, setDiscountAmount] = useState('');
 
-  const calculate = () => {
+  useEffect(() => {
     const price = parseFloat(originalPrice);
     const rate = parseFloat(discountRate);
 
-    if (isNaN(price) || isNaN(rate)) return;
+    if (isNaN(price) || isNaN(rate) || !originalPrice) {
+      setDiscountAmount('');
+      setDiscountedPrice('');
+      return;
+    }
 
     const amount = (price * rate) / 100;
     const final = price - amount;
 
-    setDiscountAmount(amount.toFixed(0));
-    setDiscountedPrice(final.toFixed(0));
-  };
-
-  const handleExample = () => {
-    setOriginalPrice('10000');
-    setDiscountRate('20');
-  };
+    setDiscountAmount(Math.round(amount).toLocaleString());
+    setDiscountedPrice(Math.round(final).toLocaleString());
+  }, [originalPrice, discountRate]);
 
   return (
     <ToolLayout title={t('name')} description={t('description')}>
@@ -56,27 +55,6 @@ export default function DiscountCalculator() {
             onChange={(e) => setDiscountRate(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
           />
-        </div>
-
-        <div className="flex gap-3">
-          <button
-            onClick={calculate}
-            className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded font-medium"
-          >
-            {tc('calculate')}
-          </button>
-          <button
-            onClick={() => { setOriginalPrice(''); setDiscountRate(''); setDiscountedPrice(''); setDiscountAmount(''); }}
-            className="px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded font-medium"
-          >
-            {tc('clear')}
-          </button>
-          <button
-            onClick={handleExample}
-            className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded font-medium"
-          >
-            {tc('example')}
-          </button>
         </div>
 
         {discountedPrice && (

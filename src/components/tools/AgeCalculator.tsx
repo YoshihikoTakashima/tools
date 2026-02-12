@@ -1,18 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import ToolLayout from '../ToolLayout';
 
 export default function AgeCalculator() {
   const t = useTranslations('tools.age-calculator');
-  const tc = useTranslations('common');
 
   const [birthdate, setBirthdate] = useState('');
   const [result, setResult] = useState<{ years: number; days: number; totalDays: number; nextBirthday: number } | null>(null);
 
-  const calculate = () => {
-    if (!birthdate) return;
+  useEffect(() => {
+    if (!birthdate) {
+      setResult(null);
+      return;
+    }
 
     const birth = new Date(birthdate);
     const today = new Date();
@@ -38,11 +40,7 @@ export default function AgeCalculator() {
       totalDays,
       nextBirthday: daysUntilBirthday,
     });
-  };
-
-  const handleExample = () => {
-    setBirthdate('1990-01-01');
-  };
+  }, [birthdate]);
 
   return (
     <ToolLayout title={t('name')} description={t('description')}>
@@ -57,27 +55,6 @@ export default function AgeCalculator() {
             onChange={(e) => setBirthdate(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
           />
-        </div>
-
-        <div className="flex gap-3">
-          <button
-            onClick={calculate}
-            className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded font-medium"
-          >
-            {tc('calculate')}
-          </button>
-          <button
-            onClick={() => { setBirthdate(''); setResult(null); }}
-            className="px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded font-medium"
-          >
-            {tc('clear')}
-          </button>
-          <button
-            onClick={handleExample}
-            className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded font-medium"
-          >
-            {tc('example')}
-          </button>
         </div>
 
         {result && (

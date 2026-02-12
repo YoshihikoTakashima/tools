@@ -11,4 +11,5 @@ export interface Tool {
   isGlobal: boolean;
   keywords: string[];
   createdAt: string;
+  isRecommended?: boolean;
 }

@@ -83,8 +83,17 @@ export default function SearchPage({ query }: SearchPageProps) {
               <Link
                 key={tool.id}
                 href={`/${locale}/tool/${tool.slug}`}
-                className="p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+                className={`p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg border transition-colors relative ${
+                  tool.isRecommended
+                    ? 'border-blue-500 dark:border-blue-500 shadow-md'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500'
+                }`}
               >
+                {tool.isRecommended && (
+                  <span className="absolute top-2 right-2 px-2 py-0.5 bg-blue-500 text-white text-xs rounded-full">
+                    おすすめ
+                  </span>
+                )}
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">
                   {t(`tools.${tool.slug}.name`)}
                 </h3>

@@ -22,5 +22,5 @@ export default async function Page({
     notFound();
   }
 
-  return <CategoryPage categorySlug={slug} categoryIcon={category.icon} />;
+  return <CategoryPage categorySlug={slug} />;
 }
