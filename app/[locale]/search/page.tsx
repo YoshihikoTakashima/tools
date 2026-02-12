@@ -1,6 +1,8 @@
 import { setRequestLocale } from 'next-intl/server';
 import SearchPage from '@/src/components/SearchPage';
 
+export const runtime = 'edge';
+
 export default async function Page({
   params,
   searchParams,
