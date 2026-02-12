@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ツール集アプリ
 
-## Getting Started
+Next.jsで作成したシンプルなWebツール集です。現在は電卓機能を実装しています。
 
-First, run the development server:
+## 機能
+
+- ✅ 電卓（四則演算）
+- 📱 レスポンシブデザイン
+- 🎯 AdSenseスペース確保済み
+
+## 開発環境
 
 ```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+開発サーバーは http://localhost:3000 で起動します。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ビルド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 静的サイトとしてビルド
+npm run build
+```
 
-## Learn More
+ビルド結果は `out` ディレクトリに出力されます。
 
-To learn more about Next.js, take a look at the following resources:
+## Cloudflare Pagesへのデプロイ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. Cloudflare Pagesの設定
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. [Cloudflare Dashboard](https://dash.cloudflare.com/)にログイン
+2. "Workers & Pages" > "Create application" > "Pages" > "Connect to Git"を選択
+3. GitHubリポジトリを接続
 
-## Deploy on Vercel
+### 2. ビルド設定
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **ビルドコマンド**: `npm run build`
+- **ビルド出力ディレクトリ**: `out`
+- **Node.jsバージョン**: 20以上
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. デプロイ
+
+設定完了後、gitにプッシュすると自動的にデプロイされます。
+
+## 技術スタック
+
+- **フレームワーク**: Next.js 16 (App Router)
+- **言語**: TypeScript
+- **スタイリング**: Tailwind CSS
+- **ホスティング**: Cloudflare Pages (静的エクスポート)
+
+## ディレクトリ構成
+
+```
+.
+├── app/
+│   ├── layout.tsx    # ルートレイアウト
+│   ├── page.tsx      # 電卓ページ
+│   └── globals.css   # グローバルスタイル
+├── public/           # 静的ファイル
+├── next.config.ts    # Next.js設定
+└── package.json
+```
+
+## AdSenseの設定
+
+`app/page.tsx` の以下の部分に、AdSenseのコードを挿入してください。
+
+```tsx
+{/* AdSense スペース（上部） */}
+<div className="w-full bg-white border-b border-slate-300 p-4">
+  <div className="max-w-3xl mx-auto h-20 bg-slate-100 flex items-center justify-center text-slate-400 text-sm">
+    AdSense 広告スペース (728x90)
+  </div>
+</div>
+```
+
+## ライセンス
+
+MIT

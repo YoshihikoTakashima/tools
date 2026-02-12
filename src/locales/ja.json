@@ -1,0 +1,231 @@
+{
+  "site": {
+    "title": "Webよろずや",
+    "description": "無料で使える便利なWebツール集",
+    "tagline": "日常で使える便利ツールを集めました"
+  },
+  "header": {
+    "search": "ツールを検索...",
+    "language": "言語"
+  },
+  "footer": {
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "contact": "お問い合わせ",
+    "copyright": "© 2026 Webよろずや. All rights reserved."
+  },
+  "common": {
+    "copy": "コピー",
+    "copied": "コピーしました!",
+    "clear": "クリア",
+    "example": "サンプル",
+    "input": "入力",
+    "output": "結果",
+    "calculate": "計算",
+    "convert": "変換",
+    "generate": "生成",
+    "format": "整形",
+    "error": "エラー",
+    "backToHome": "ホームに戻る",
+    "lightMode": "ライトモード",
+    "darkMode": "ダークモード"
+  },
+  "breadcrumb": {
+    "home": "ホーム",
+    "search": "検索結果"
+  },
+  "categories": {
+    "calculator": {
+      "name": "計算機",
+      "description": "日常の計算を簡単に"
+    },
+    "converter": {
+      "name": "変換ツール",
+      "description": "様々な形式に変換"
+    },
+    "text": {
+      "name": "テキスト処理",
+      "description": "文字列の加工・分析"
+    },
+    "date": {
+      "name": "日付計算",
+      "description": "日付・年齢の計算"
+    },
+    "generator": {
+      "name": "生成ツール",
+      "description": "各種データを生成"
+    },
+    "formatter": {
+      "name": "整形ツール",
+      "description": "データを見やすく整形"
+    }
+  },
+  "tools": {
+    "tax-calculator": {
+      "name": "消費税計算",
+      "description": "税込・税抜価格を計算します",
+      "taxRate": "税率 (%)",
+      "priceExcludingTax": "税抜価格",
+      "priceIncludingTax": "税込価格",
+      "taxAmount": "税額",
+      "roundingMethod": "端数処理",
+      "round": "四捨五入",
+      "floor": "切り捨て",
+      "ceil": "切り上げ",
+      "mode": "計算方向",
+      "toIncludingTax": "税込価格を計算",
+      "toExcludingTax": "税抜価格を計算"
+    },
+    "discount-calculator": {
+      "name": "割引計算",
+      "description": "割引後の価格を計算します",
+      "originalPrice": "元の価格",
+      "discountRate": "割引率 (%)",
+      "discountedPrice": "割引後価格",
+      "discountAmount": "割引額"
+    },
+    "age-calculator": {
+      "name": "年齢計算",
+      "description": "生年月日から年齢を計算します",
+      "birthdate": "生年月日",
+      "baseDate": "基準日",
+      "age": "年齢",
+      "years": "歳",
+      "days": "日",
+      "totalDays": "総日数",
+      "nextBirthday": "次の誕生日まで",
+      "daysUntilBirthday": "日"
+    },
+    "date-diff": {
+      "name": "日数計算",
+      "description": "2つの日付の差分を計算します",
+      "startDate": "開始日",
+      "endDate": "終了日",
+      "difference": "差分",
+      "daysCount": "日"
+    },
+    "text-counter": {
+      "name": "文字数カウント",
+      "description": "文字数・行数をカウントします",
+      "text": "テキスト",
+      "characters": "文字数",
+      "charactersNoSpaces": "文字数（空白除外）",
+      "lines": "行数",
+      "bytes": "バイト数 (UTF-8)"
+    },
+    "remove-line-breaks": {
+      "name": "改行削除",
+      "description": "テキストから改行を削除します",
+      "replaceWith": "置換方法",
+      "space": "スペースに置換",
+      "remove": "完全削除"
+    },
+    "zenkaku-hankaku": {
+      "name": "全角半角変換",
+      "description": "全角・半角文字を相互変換します",
+      "toHankaku": "半角に変換",
+      "toZenkaku": "全角に変換"
+    },
+    "json-formatter": {
+      "name": "JSON整形",
+      "description": "JSONを見やすく整形・圧縮します",
+      "prettify": "整形",
+      "minify": "圧縮",
+      "invalidJson": "無効なJSON形式です"
+    },
+    "base64": {
+      "name": "Base64変換",
+      "description": "テキストをBase64にエンコード・デコードします",
+      "encode": "エンコード",
+      "decode": "デコード",
+      "invalidBase64": "無効なBase64形式です"
+    },
+    "uuid-generator": {
+      "name": "UUID生成",
+      "description": "ランダムなUUID (v4) を生成します",
+      "count": "生成個数",
+      "uuids": "生成されたUUID"
+    }
+  },
+  "search": {
+    "title": "検索結果",
+    "query": "検索キーワード",
+    "noResults": "該当するツールが見つかりませんでした",
+    "resultsCount": "{count}件のツールが見つかりました"
+  },
+  "terms": {
+    "title": "利用規約",
+    "lastUpdated": "最終更新日: 2026年2月12日",
+    "section1": {
+      "title": "1. はじめに",
+      "content": "本サービス「Webよろずや」（以下「本サービス」）をご利用いただく前に、以下の利用規約（以下「本規約」）をよくお読みください。本サービスをご利用いただくことで、本規約に同意したものとみなします。"
+    },
+    "section2": {
+      "title": "2. サービスの内容",
+      "content": "本サービスは、各種計算ツール、変換ツール、テキスト処理ツールなど、無料のWebツールを提供するものです。"
+    },
+    "section3": {
+      "title": "3. 免責事項",
+      "content": "本サービスは、ツールの計算結果や変換結果の正確性について保証するものではありません。ツールのご利用は、お客様ご自身の責任において行ってください。本サービスの利用により生じたいかなる損害についても、当サービスは一切の責任を負いません。"
+    },
+    "section4": {
+      "title": "4. プライバシー",
+      "content": "本サービスは、お客様の入力データをサーバーに保存することはありません。すべての処理はブラウザ内で完結します。詳細はプライバシーポリシーをご確認ください。"
+    },
+    "section5": {
+      "title": "5. 禁止事項",
+      "content": "本サービスを利用するにあたり、以下の行為を禁止します：\n・法令または公序良俗に違反する行為\n・本サービスの運営を妨害する行為\n・他のユーザーまたは第三者に不利益を与える行為\n・本サービスに過度な負荷をかける行為"
+    },
+    "section6": {
+      "title": "6. サービスの変更・終了",
+      "content": "当サービスは、事前の予告なく本サービスの内容を変更、または本サービスの提供を終了することがあります。"
+    },
+    "section7": {
+      "title": "7. 規約の変更",
+      "content": "当サービスは、必要に応じて本規約を変更することがあります。変更後の規約は、本サイト上に掲載された時点で効力を生じます。"
+    },
+    "section8": {
+      "title": "8. 準拠法・管轄裁判所",
+      "content": "本規約の解釈にあたっては、日本法を準拠法とします。本サービスに関して紛争が生じた場合には、東京地方裁判所を第一審の専属的合意管轄裁判所とします。"
+    }
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "lastUpdated": "最終更新日: 2026年2月12日",
+    "intro": "Webよろずや（以下「本サービス」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めます。",
+    "section1": {
+      "title": "1. 収集する情報",
+      "content": "本サービスは、以下の情報を収集する場合があります：\n・アクセスログ（IPアドレス、ブラウザ情報、アクセス日時など）\n・Cookie（サイトの利便性向上のため）"
+    },
+    "section2": {
+      "title": "2. データの保存について",
+      "content": "本サービスで提供する各種ツールは、すべてブラウザ内で処理が完結します。お客様が入力したデータ（計算式、テキスト、変換対象データなど）は、当サービスのサーバーに送信されることはなく、保存されることもありません。"
+    },
+    "section3": {
+      "title": "3. Cookieの利用",
+      "content": "本サービスでは、ダークモードの設定など、ユーザーの利便性を向上させるためにCookieを使用します。Cookieはブラウザの設定で無効にすることができますが、一部の機能が正しく動作しない場合があります。"
+    },
+    "section4": {
+      "title": "4. 広告について",
+      "content": "本サービスでは、Google AdSenseなどの第三者配信の広告サービスを利用する場合があります。これらの広告配信事業者は、Cookieを使用して、ユーザーの興味に応じた広告を配信する場合があります。"
+    },
+    "section5": {
+      "title": "5. アクセス解析ツール",
+      "content": "本サービスでは、サービスの利用状況を把握するため、Google Analyticsなどのアクセス解析ツールを使用する場合があります。これらのツールはCookieを使用して情報を収集しますが、個人を特定する情報は含まれません。"
+    },
+    "section6": {
+      "title": "6. プライバシーポリシーの変更",
+      "content": "本ポリシーの内容は、法令の変更やサービス内容の変更に伴い、予告なく変更されることがあります。"
+    },
+    "section7": {
+      "title": "7. お問い合わせ",
+      "content": "プライバシーポリシーに関するお問い合わせは、お問い合わせフォームからご連絡ください。"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "本サービスに関するご質問、ご意見、不具合の報告などは、以下のフォームからお問い合わせください。",
+    "formButton": "お問い合わせフォームを開く",
+    "note": "※ お問い合わせ内容によっては、回答にお時間をいただく場合がございます。"
+  }
+}

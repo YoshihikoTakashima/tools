@@ -1,0 +1,231 @@
+{
+  "site": {
+    "title": "Web Tools",
+    "description": "Free and useful web tools collection",
+    "tagline": "Collection of handy tools for everyday use"
+  },
+  "header": {
+    "search": "Search tools...",
+    "language": "Language"
+  },
+  "footer": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "contact": "Contact",
+    "copyright": "© 2026 Web Tools. All rights reserved."
+  },
+  "common": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "clear": "Clear",
+    "example": "Example",
+    "input": "Input",
+    "output": "Output",
+    "calculate": "Calculate",
+    "convert": "Convert",
+    "generate": "Generate",
+    "format": "Format",
+    "error": "Error",
+    "backToHome": "Back to Home",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "search": "Search Results"
+  },
+  "categories": {
+    "calculator": {
+      "name": "Calculators",
+      "description": "Simple everyday calculations"
+    },
+    "converter": {
+      "name": "Converters",
+      "description": "Convert between various formats"
+    },
+    "text": {
+      "name": "Text Tools",
+      "description": "Process and analyze text"
+    },
+    "date": {
+      "name": "Date Tools",
+      "description": "Calculate dates and ages"
+    },
+    "generator": {
+      "name": "Generators",
+      "description": "Generate various data"
+    },
+    "formatter": {
+      "name": "Formatters",
+      "description": "Format data beautifully"
+    }
+  },
+  "tools": {
+    "tax-calculator": {
+      "name": "Tax Calculator",
+      "description": "Calculate price with or without tax",
+      "taxRate": "Tax Rate (%)",
+      "priceExcludingTax": "Price Excluding Tax",
+      "priceIncludingTax": "Price Including Tax",
+      "taxAmount": "Tax Amount",
+      "roundingMethod": "Rounding",
+      "round": "Round",
+      "floor": "Floor",
+      "ceil": "Ceil",
+      "mode": "Calculation Mode",
+      "toIncludingTax": "Calculate price including tax",
+      "toExcludingTax": "Calculate price excluding tax"
+    },
+    "discount-calculator": {
+      "name": "Discount Calculator",
+      "description": "Calculate discounted price",
+      "originalPrice": "Original Price",
+      "discountRate": "Discount Rate (%)",
+      "discountedPrice": "Discounted Price",
+      "discountAmount": "Discount Amount"
+    },
+    "age-calculator": {
+      "name": "Age Calculator",
+      "description": "Calculate age from birthdate",
+      "birthdate": "Birthdate",
+      "baseDate": "Base Date",
+      "age": "Age",
+      "years": "years",
+      "days": "days",
+      "totalDays": "Total Days",
+      "nextBirthday": "Until Next Birthday",
+      "daysUntilBirthday": "days"
+    },
+    "date-diff": {
+      "name": "Date Difference",
+      "description": "Calculate difference between two dates",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "difference": "Difference",
+      "daysCount": "days"
+    },
+    "text-counter": {
+      "name": "Text Counter",
+      "description": "Count characters and lines",
+      "text": "Text",
+      "characters": "Characters",
+      "charactersNoSpaces": "Characters (no spaces)",
+      "lines": "Lines",
+      "bytes": "Bytes (UTF-8)"
+    },
+    "remove-line-breaks": {
+      "name": "Remove Line Breaks",
+      "description": "Remove line breaks from text",
+      "replaceWith": "Replace With",
+      "space": "Replace with space",
+      "remove": "Remove completely"
+    },
+    "zenkaku-hankaku": {
+      "name": "Fullwidth/Halfwidth Converter",
+      "description": "Convert between fullwidth and halfwidth characters",
+      "toHankaku": "To Halfwidth",
+      "toZenkaku": "To Fullwidth"
+    },
+    "json-formatter": {
+      "name": "JSON Formatter",
+      "description": "Format or minify JSON",
+      "prettify": "Prettify",
+      "minify": "Minify",
+      "invalidJson": "Invalid JSON format"
+    },
+    "base64": {
+      "name": "Base64 Converter",
+      "description": "Encode or decode Base64",
+      "encode": "Encode",
+      "decode": "Decode",
+      "invalidBase64": "Invalid Base64 format"
+    },
+    "uuid-generator": {
+      "name": "UUID Generator",
+      "description": "Generate random UUID (v4)",
+      "count": "Count",
+      "uuids": "Generated UUIDs"
+    }
+  },
+  "search": {
+    "title": "Search Results",
+    "query": "Search Query",
+    "noResults": "No tools found",
+    "resultsCount": "{count} tools found"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated: February 12, 2026",
+    "section1": {
+      "title": "1. Introduction",
+      "content": "Before using this service (\"Web Tools\"), please read the following Terms of Service carefully. By using this service, you agree to these terms."
+    },
+    "section2": {
+      "title": "2. Service Content",
+      "content": "This service provides various free web tools including calculators, converters, and text processing tools."
+    },
+    "section3": {
+      "title": "3. Disclaimer",
+      "content": "This service does not guarantee the accuracy of calculation results or conversion outputs. Use of the tools is at your own risk. We assume no responsibility for any damages arising from the use of this service."
+    },
+    "section4": {
+      "title": "4. Privacy",
+      "content": "This service does not store your input data on our servers. All processing is performed within your browser. For details, please refer to our Privacy Policy."
+    },
+    "section5": {
+      "title": "5. Prohibited Acts",
+      "content": "The following acts are prohibited when using this service:\n・Acts that violate laws or public order and morals\n・Acts that interfere with the operation of this service\n・Acts that disadvantage other users or third parties\n・Acts that place excessive load on this service"
+    },
+    "section6": {
+      "title": "6. Service Changes and Termination",
+      "content": "We may change the content of this service or terminate the provision of this service without prior notice."
+    },
+    "section7": {
+      "title": "7. Changes to Terms",
+      "content": "We may change these terms as necessary. Changed terms will take effect when posted on this site."
+    },
+    "section8": {
+      "title": "8. Governing Law and Jurisdiction",
+      "content": "These terms shall be governed by Japanese law. In the event of any dispute, the Tokyo District Court shall have exclusive jurisdiction as the court of first instance."
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated: February 12, 2026",
+    "intro": "Web Tools respects user privacy and is committed to protecting personal information.",
+    "section1": {
+      "title": "1. Information We Collect",
+      "content": "This service may collect the following information:\n・Access logs (IP address, browser information, access date and time, etc.)\n・Cookies (for improving site usability)"
+    },
+    "section2": {
+      "title": "2. Data Storage",
+      "content": "All tools provided by this service are processed entirely within your browser. Data you enter (formulas, text, conversion data, etc.) is not transmitted to our servers and is not stored."
+    },
+    "section3": {
+      "title": "3. Use of Cookies",
+      "content": "This service uses cookies to improve user experience, such as storing dark mode settings. Cookies can be disabled in browser settings, but some features may not work properly."
+    },
+    "section4": {
+      "title": "4. Advertising",
+      "content": "This service may use third-party advertising services such as Google AdSense. These advertisers may use cookies to deliver ads based on user interests."
+    },
+    "section5": {
+      "title": "5. Analytics Tools",
+      "content": "This service may use analytics tools such as Google Analytics to understand service usage. These tools collect information using cookies but do not include personally identifiable information."
+    },
+    "section6": {
+      "title": "6. Changes to Privacy Policy",
+      "content": "This policy may be changed without notice due to legal changes or service content changes."
+    },
+    "section7": {
+      "title": "7. Contact",
+      "content": "For inquiries regarding this privacy policy, please contact us through the contact form."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "For questions, feedback, or bug reports about this service, please contact us using the form below.",
+    "formButton": "Open Contact Form",
+    "note": "※ Depending on the content of your inquiry, it may take some time to respond."
+  }
+}
