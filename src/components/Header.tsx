@@ -47,44 +47,10 @@ export default function Header() {
             {t('site.title')}
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
-              aria-label="Toggle dark mode"
-            >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-
-            <div className="flex gap-2">
-              <button
-                onClick={() => switchLocale('ja')}
-                className={`px-3 py-1 rounded ${
-                  locale === 'ja'
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300'
-                }`}
-              >
-                JA
-              </button>
-              <button
-                onClick={() => switchLocale('en')}
-                className={`px-3 py-1 rounded ${
-                  locale === 'en'
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300'
-                }`}
-              >
-                EN
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
+          {/* Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -92,14 +58,14 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Popup */}
+      {/* Menu Popup */}
       {menuOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-40"
             onClick={() => setMenuOpen(false)}
           />
-          <div className="absolute right-4 top-20 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-[60] md:hidden">
+          <div className="absolute right-4 top-20 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-[60]">
             <div className="p-4 space-y-3">
               <button
                 onClick={toggleDarkMode}
