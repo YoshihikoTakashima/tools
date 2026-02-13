@@ -37,9 +37,9 @@ export default function InfoModal({ isOpen, onClose, title, children }: InfoModa
 
   return (
     <div className={isOpen ? 'block' : 'hidden'}>
-      {/* バックドロップ - 極薄 */}
+      {/* バックドロップ */}
       <div
-        className="fixed inset-0 bg-black/[0.04] z-40"
+        className="fixed inset-0 bg-black/50 z-[100]"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -50,7 +50,7 @@ export default function InfoModal({ isOpen, onClose, title, children }: InfoModa
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
-        className="fixed inset-4 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:max-w-2xl sm:w-full bg-white dark:bg-gray-800 rounded-lg shadow-xl z-50 flex flex-col max-h-[90vh]"
+        className="fixed inset-4 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:max-w-2xl sm:w-full bg-white/95 dark:bg-gray-800/95 rounded-lg shadow-xl z-[110] flex flex-col max-h-[90vh]"
       >
         {/* ヘッダー */}
         <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">

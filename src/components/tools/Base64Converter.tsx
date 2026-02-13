@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { ArrowUpDown } from 'lucide-react';
 import ToolLayout from '../ToolLayout';
 import CopyButton from '../CopyButton';
 
@@ -39,6 +40,13 @@ export default function Base64Converter() {
     setInput('Hello, World! こんにちは');
   };
 
+  const handleSwap = () => {
+    const temp = input;
+    setInput(output);
+    setOutput(temp);
+    setError('');
+  };
+
   return (
     <ToolLayout title={t('name')} description={t('description')}>
       <div className="space-y-6">
@@ -66,6 +74,14 @@ export default function Base64Converter() {
             className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded font-medium"
           >
             {t('decode')}
+          </button>
+          <button
+            onClick={handleSwap}
+            disabled={!input && !output}
+            className="p-2 bg-orange-500 hover:bg-orange-600 text-white rounded font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+            title={tc('swap') || '入力と出力を入れ替え'}
+          >
+            <ArrowUpDown className="w-5 h-5" />
           </button>
           <button
             onClick={() => { setInput(''); setOutput(''); setError(''); }}

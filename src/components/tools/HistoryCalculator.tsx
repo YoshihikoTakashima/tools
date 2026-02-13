@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { History, Trash2, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import ToolLayout from '../ToolLayout';
+import ToolInfoArticle from '../ToolInfoArticle';
 
 export default function HistoryCalculator() {
   const t = useTranslations('tools.history-calculator');
@@ -305,7 +306,48 @@ export default function HistoryCalculator() {
   };
 
   return (
-    <ToolLayout title={t('name')} description={t('description')}>
+    <ToolLayout
+      title={t('name')}
+      description={t('description')}
+      headerExtra={
+        <ToolInfoArticle
+          buttonLabel={t('infoButtonLabel')}
+          articleTitle={t('article.title')}
+          sections={[
+            {
+              title: t('article.section1.title'),
+              content: t('article.section1.content'),
+            },
+            {
+              title: t('article.section2.title'),
+              content: t('article.section2.content'),
+            },
+            {
+              title: t('article.section3.title'),
+              content: t('article.section3.content'),
+            },
+            {
+              title: t('article.section4.title'),
+              content: '',
+              list: [
+                t('article.section4.use1'),
+                t('article.section4.use2'),
+                t('article.section4.use3'),
+                t('article.section4.use4'),
+              ],
+            },
+            {
+              title: t('article.section5.title'),
+              content: t('article.section5.content'),
+            },
+            {
+              title: t('article.section6.title'),
+              content: t('article.section6.content'),
+            },
+          ]}
+        />
+      }
+    >
       <div className="flex flex-col h-[calc(100vh-280px)] min-h-[500px]">
         {/* 履歴セクション - 上部の空きスペース、下から上に追加 */}
         <div className="flex-1 overflow-y-auto mb-4">
