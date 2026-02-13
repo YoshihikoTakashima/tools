@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/${locale}/tool/${tool.slug}`,
         lastModified: new Date(tool.createdAt),
         changeFrequency: 'weekly',
-        priority: 0.8,
+        priority: tool.isRecommended ? 0.9 : 0.8,
       });
     });
   });
@@ -45,8 +45,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/${locale}/category/${category.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
-        priority: 0.6,
+        priority: 0.7,
       });
+    });
+  });
+
+  // Search page
+  locales.forEach((locale) => {
+    routes.push({
+      url: `${baseUrl}/${locale}/search`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.6,
     });
   });
 
