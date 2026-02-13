@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { Copy, Check } from 'lucide-react';
 
 interface CopyButtonProps {
   text: string;
+  className?: string;
 }
 
-export default function CopyButton({ text }: CopyButtonProps) {
+export default function CopyButton({ text, className = '' }: CopyButtonProps) {
   const t = useTranslations('common');
   const [copied, setCopied] = useState(false);
 
@@ -24,10 +26,16 @@ export default function CopyButton({ text }: CopyButtonProps) {
   return (
     <button
       onClick={handleCopy}
-      className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded font-medium transition-colors disabled:opacity-50"
+      className={`p-2 rounded-lg transition-all ${
+        copied
+          ? 'bg-green-500 hover:bg-green-600 text-white'
+          : 'bg-blue-500 hover:bg-blue-600 text-white'
+      } disabled:opacity-50 ${className}`}
       disabled={!text}
+      title={copied ? t('copied') : t('copy')}
+      aria-label={copied ? t('copied') : t('copy')}
     >
-      {copied ? t('copied') : t('copy')}
+      {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
     </button>
   );
 }

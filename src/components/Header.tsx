@@ -50,7 +50,7 @@ export default function Header() {
           {/* Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-white"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
