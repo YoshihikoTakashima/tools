@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import ToolLayout from '../ToolLayout';
+import ToolInfoArticle from '../ToolInfoArticle';
 
 export default function DiscountCalculator() {
   const t = useTranslations('tools.discount-calculator');
@@ -31,7 +32,49 @@ export default function DiscountCalculator() {
   }, [originalPrice, discountRate]);
 
   return (
-    <ToolLayout title={t('name')} description={t('description')}>
+    <ToolLayout
+      title={t('name')}
+      description={t('description')}
+      headerExtra={
+        <ToolInfoArticle
+          buttonLabel={t('infoButtonLabel')}
+          articleTitle={t('article.title')}
+          sections={[
+            {
+              title: t('article.section1.title'),
+              content: t('article.section1.content'),
+            },
+            {
+              title: t('article.section2.title'),
+              content: '',
+              list: [
+                t('article.section2.feature1'),
+                t('article.section2.feature2'),
+                t('article.section2.feature3'),
+              ],
+            },
+            {
+              title: t('article.section3.title'),
+              content: '',
+              list: [
+                t('article.section3.use1'),
+                t('article.section3.use2'),
+                t('article.section3.use3'),
+                t('article.section3.use4'),
+              ],
+            },
+            {
+              title: t('article.section4.title'),
+              content: t('article.section4.content'),
+            },
+            {
+              title: t('article.section5.title'),
+              content: t('article.section5.content'),
+            },
+          ]}
+        />
+      }
+    >
       <div className="space-y-6">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
