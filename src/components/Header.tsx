@@ -54,7 +54,7 @@ export default function Header() {
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
               aria-label="Toggle dark mode"
             >
-              {isDark ? '🌞' : '🌙'}
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
 
             <div className="flex gap-2">
