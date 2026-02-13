@@ -348,9 +348,52 @@ export default function HistoryCalculator() {
         />
       }
     >
-      <div className="flex flex-col h-[calc(100vh-280px)] min-h-[500px]">
-        {/* 履歴セクション - 上部の空きスペース、下から上に追加 */}
-        <div className="flex-1 overflow-y-auto mb-4">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
+        {/* 計算機セクション - モバイルは下、PCは左 */}
+        <div className="order-2 lg:order-1 lg:w-auto lg:max-w-md flex-shrink-0">
+          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+            {/* ディスプレイ */}
+            <div className="p-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-800 border-b border-gray-200 dark:border-gray-700">
+              <div className="relative w-full mb-2">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  inputMode="none"
+                  className="w-full text-right text-gray-800 dark:text-white text-3xl font-bold bg-transparent border-none outline-none caret-indigo-500 p-0 m-0"
+                  placeholder="0"
+                  autoComplete="off"
+                />
+              </div>
+              <div className="text-lg font-medium text-gray-400 dark:text-gray-500 min-h-[1.5rem] transition-all text-right w-full flex justify-end gap-3 overflow-x-auto">
+                {calculationSteps.length > 0 && calculationSteps.map((step, idx) => (
+                  <span key={idx} className="opacity-80 whitespace-nowrap">
+                    {formatNumber(step)}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* ボタングリッド */}
+            <div className="p-3 bg-gray-50 dark:bg-gray-900">
+              <div className="grid grid-cols-4 gap-2">
+                {buttons.map((btn, idx) => (
+                  <button
+                    key={idx}
+                    onClick={btn.action}
+                    className={getButtonStyle(btn.type)}
+                  >
+                    {btn.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 履歴セクション - モバイルは上、PCは右 */}
+        <div className="order-1 lg:order-2 flex-1 lg:min-h-[600px] overflow-y-auto">
           {history.length === 0 ? (
             <div className="h-full flex items-center justify-center">
               <div className="text-center text-gray-400 dark:text-gray-600">
@@ -400,47 +443,6 @@ export default function HistoryCalculator() {
               </div>
             </div>
           )}
-        </div>
-
-        {/* 計算機セクション - 下部固定 */}
-        <div className="flex-none bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-          {/* ディスプレイ */}
-          <div className="p-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-800 border-b border-gray-200 dark:border-gray-700">
-            <div className="relative w-full mb-2">
-              <input
-                ref={inputRef}
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                inputMode="none"
-                className="w-full text-right text-gray-800 dark:text-white text-3xl font-bold bg-transparent border-none outline-none caret-indigo-500 p-0 m-0"
-                placeholder="0"
-                autoComplete="off"
-              />
-            </div>
-            <div className="text-lg font-medium text-gray-400 dark:text-gray-500 min-h-[1.5rem] transition-all text-right w-full flex justify-end gap-3 overflow-x-auto">
-              {calculationSteps.length > 0 && calculationSteps.map((step, idx) => (
-                <span key={idx} className="opacity-80 whitespace-nowrap">
-                  {formatNumber(step)}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* ボタングリッド */}
-          <div className="p-3 bg-gray-50 dark:bg-gray-900">
-            <div className="grid grid-cols-4 gap-2">
-              {buttons.map((btn, idx) => (
-                <button
-                  key={idx}
-                  onClick={btn.action}
-                  className={getButtonStyle(btn.type)}
-                >
-                  {btn.label}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </ToolLayout>
