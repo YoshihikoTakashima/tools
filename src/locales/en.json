@@ -74,7 +74,32 @@
       "ceil": "Ceil",
       "mode": "Calculation Mode",
       "toIncludingTax": "Calculate price including tax",
-      "toExcludingTax": "Calculate price excluding tax"
+      "toExcludingTax": "Calculate price excluding tax",
+      "infoButtonLabel": "About Tax Calculator",
+      "article": {
+        "title": "What is Tax Calculator?",
+        "section1": {
+          "title": "Tax Calculator Overview",
+          "content": "The Tax Calculator is a tool that easily calculates tax-inclusive prices, tax-exclusive prices, and tax amounts.\n\n\"Wait, is this excluding or including tax?\" \"How much is 10%?\"\nFor those who have frozen in front of the register, this is probably not uncommon.\n\nWith this tool, you can calculate tax amounts instantly just by entering the amount."
+        },
+        "section2": {
+          "title": "Tool Features",
+          "feature1": "One-click conversion between tax-inclusive and tax-exclusive - Automatically calculates tax amount and total from the input amount.",
+          "feature2": "Supports tax rate changes - Tax rate can be changed to 8%, 10%, etc. Also useful for checking reduced tax rates.",
+          "feature3": "No registration required, instant use - Browser-based tool ready to use when you need it."
+        },
+        "section3": {
+          "title": "Main Uses",
+          "use1": "Creating estimates and invoices",
+          "use2": "Checking product prices",
+          "use3": "Final price check after discount + tax",
+          "use4": "Reality check: \"Is this really within budget?\""
+        },
+        "section4": {
+          "title": "A Little Tip",
+          "content": "Consumption tax is calculated as \"price excluding tax × tax rate,\" but in practice, rounding (floor, ceiling, rounding) may occur.\n\nThis tool is based on general calculation methods, but please follow each store's accounting rules for final amounts."
+        }
+      }
     },
     "discount-calculator": {
       "name": "Discount Calculator",
@@ -82,7 +107,36 @@
       "originalPrice": "Original Price",
       "discountRate": "Discount Rate (%)",
       "discountedPrice": "Discounted Price",
-      "discountAmount": "Discount Amount"
+      "discountAmount": "Discount Amount",
+      "infoButtonLabel": "About Discount Calculator",
+      "article": {
+        "title": "What is Discount Calculator?",
+        "section1": {
+          "title": "Discount Calculator Overview",
+          "content": "The Discount Calculator is a tool that instantly calculates discount rates and discounted prices.\n\n\"How much is 30% off actually?\"\n\"Is half price really cheap?\"\n\"What percentage is the second item half off?\"\n\nPull out your smartphone on the spot and calculate immediately. An essential tool for protecting your \"reason\" while shopping."
+        },
+        "section2": {
+          "title": "Tool Features",
+          "feature1": "Calculate final price from discount rate - Just enter the original price and discount rate to display the payment amount.",
+          "feature2": "Reverse calculate discount rate from discounted price - \"How much am I saving?\" also calculated instantly.",
+          "feature3": "Simple design - No unnecessary features. Ready to use immediately."
+        },
+        "section3": {
+          "title": "Main Uses",
+          "use1": "Checking sale item prices",
+          "use2": "Comparing multiple discounts",
+          "use3": "Checking campaign prices",
+          "use4": "Finding \"reasons not to buy\" rather than \"reasons to buy\""
+        },
+        "section4": {
+          "title": "A Half-Joking Reality",
+          "content": "70% off is a good deal.\nBut \"things you won't use\" are 100% wasteful.\n\nThis tool is your supporter in protecting your wallet and sanity."
+        },
+        "section5": {
+          "title": "About Privacy",
+          "content": "All calculations are completed within your browser. Input data is never transmitted externally."
+        }
+      }
     },
     "age-calculator": {
       "name": "Age Calculator",
@@ -94,7 +148,32 @@
       "days": "days",
       "totalDays": "Total Days",
       "nextBirthday": "Until Next Birthday",
-      "daysUntilBirthday": "days"
+      "daysUntilBirthday": "days",
+      "infoButtonLabel": "About Age Calculator",
+      "article": {
+        "title": "What is Age Calculator?",
+        "section1": {
+          "title": "Age Calculator Overview",
+          "content": "The Age Calculator is a tool that instantly calculates \"current age,\" \"X years X months,\" and \"how many days since birth\" simply by entering a birthdate.\n\n\"Let's see... it's 2026 now... 2026 − 1993... wait, my birthday hasn't come yet... huh?\"\n—Say goodbye to such \"mental age bugs\" today.\n\nIt automatically determines leap year calculations and whether birthdays have passed, so you can quickly confirm accurate ages."
+        },
+        "section2": {
+          "title": "Tool Features",
+          "feature1": "Automatically calculate accurate age as of today - Automatically determines whether the birthday has passed. Displays precise age, not just \"approximately X years old.\"",
+          "feature2": "Display days since birth - Seeing \"You have been alive for XX days\" gives you a somewhat grand feeling. (※ May suddenly make you reflect on life)",
+          "feature3": "Simple input - Just select the birthdate. No registration required, free to use."
+        },
+        "section3": {
+          "title": "Main Uses",
+          "use1": "Verifying age when creating resumes and profiles",
+          "use2": "Calculating a child's age in months",
+          "use3": "Checking age restrictions for events",
+          "use4": "Sweet confirmation like \"How many days have we been together?\" (we take no responsibility)"
+        },
+        "section4": {
+          "title": "Important Notes",
+          "content": "This tool operates in your browser, and input data is not transmitted to servers. Information will not be retained when you close the page, so please use it with confidence."
+        }
+      }
     },
     "date-diff": {
       "name": "Date Difference",
@@ -180,7 +259,38 @@
     },
     "history-calculator": {
       "name": "History Calculator",
-      "description": "Calculator with history tracking"
+      "description": "Calculator with history tracking",
+      "infoButtonLabel": "About History Calculator",
+      "article": {
+        "title": "What is History Calculator?",
+        "section1": {
+          "title": "History Calculator Overview",
+          "content": "The History Calculator is a calculator tool that records and saves calculation processes, allowing you to review and reuse them later. Unlike regular calculators, past calculation results are automatically saved as history, making it convenient when comparing multiple calculations or redoing previous calculations. It is particularly useful when dealing with multiple numbers, such as household budget calculations or creating estimates."
+        },
+        "section2": {
+          "title": "History Features",
+          "content": "In the History Calculator, calculation results are automatically saved in list format. On mobile displays, new history is added at the bottom, while on PC displays, it stacks from top to bottom. Each history item is recorded in the format \"expression = result,\" and you can recall past calculation expressions simply by tapping or clicking. History can be deleted individually or cleared all at once."
+        },
+        "section3": {
+          "title": "Editing and Real-time Preview",
+          "content": "The input field is freely editable, and intermediate calculation values are displayed in real-time. For example, entering \"10 + 20 + 30\" will show \"10,\" \"30,\" and \"60\" step by step below the expression. This feature allows you to quickly identify where mistakes were made in long calculation expressions. It also supports keyboard shortcuts, with Enter for calculation and Escape for clear."
+        },
+        "section4": {
+          "title": "Main Uses",
+          "use1": "Household budget totals (recording daily expense and income calculations)",
+          "use2": "Creating estimates (calculating multiple items and checking totals)",
+          "use3": "Tax-inclusive price calculations (saving history of tax additions and discount calculations)",
+          "use4": "Receipt verification (comparing shopping totals with actual receipts)"
+        },
+        "section5": {
+          "title": "Important Notes",
+          "content": "History is saved only in browser memory, so it will be lost when you reload the page. For calculation results you want to keep long-term, we recommend saving them separately in notes or screenshots. Also, this tool prioritizes privacy, and input data is never transmitted to servers."
+        },
+        "section6": {
+          "title": "What This Tool Offers",
+          "content": "The History Calculator supports basic four arithmetic operations (addition, subtraction, multiplication, division) and can handle complex calculations using parentheses. Input supports both mouse/touch operations and keyboard operations. Numbers are automatically displayed with thousand separators for easy reading. Any number of calculation history items can be saved, and they can be individually deleted or cleared all at once as needed."
+        }
+      }
     }
   },
   "search": {
