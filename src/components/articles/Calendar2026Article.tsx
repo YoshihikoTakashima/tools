@@ -153,7 +153,7 @@ export default function Calendar2026Article({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* 祝日一覧セクション */}
+      {/* 祝日一覧セクション - 月別カード */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
           2026年の祝日一覧
@@ -183,6 +183,92 @@ export default function Calendar2026Article({ locale }: { locale: string }) {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 祝日一覧セクション - シンプルリスト */}
+      <section className="mb-12" id="syukujitsu">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          2026年（令和8年）の祝日
+        </h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年1月1日</span>
+              <span className="text-gray-900 dark:text-white">元日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年1月12日</span>
+              <span className="text-gray-900 dark:text-white">成人の日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年2月11日</span>
+              <span className="text-gray-900 dark:text-white">建国記念の日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年2月23日</span>
+              <span className="text-gray-900 dark:text-white">天皇誕生日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年3月20日</span>
+              <span className="text-gray-900 dark:text-white">春分の日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年4月29日</span>
+              <span className="text-gray-900 dark:text-white">昭和の日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年5月3日</span>
+              <span className="text-gray-900 dark:text-white">憲法記念日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年5月4日</span>
+              <span className="text-gray-900 dark:text-white">みどりの日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年5月5日</span>
+              <span className="text-gray-900 dark:text-white">こどもの日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-orange-600 dark:text-orange-400">2026年5月6日</span>
+              <span className="text-gray-900 dark:text-white">振替休日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年7月20日</span>
+              <span className="text-gray-900 dark:text-white">海の日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年8月11日</span>
+              <span className="text-gray-900 dark:text-white">山の日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年9月21日</span>
+              <span className="text-gray-900 dark:text-white">敬老の日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-orange-600 dark:text-orange-400">2026年9月22日</span>
+              <span className="text-gray-900 dark:text-white">国民の休日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年9月23日</span>
+              <span className="text-gray-900 dark:text-white">秋分の日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年10月12日</span>
+              <span className="text-gray-900 dark:text-white">スポーツの日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年11月3日</span>
+              <span className="text-gray-900 dark:text-white">文化の日</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-red-600 dark:text-red-400">2026年11月23日</span>
+              <span className="text-gray-900 dark:text-white">勤労感謝の日</span>
+            </div>
+          </div>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
+            ※2026年1月現在の最新情報です。
+          </p>
         </div>
       </section>
 
