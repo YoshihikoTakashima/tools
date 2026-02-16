@@ -1,8 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 
-export const runtime = 'edge';
-
 export async function generateMetadata({
   params,
 }: {
