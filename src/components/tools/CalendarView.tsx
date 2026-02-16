@@ -456,6 +456,36 @@ export default function CalendarView({ initialYear, locale }: CalendarViewProps)
             </div>
           </div>
         )}
+
+        {/* Holiday List Section */}
+        <div className="mt-12" id="syukujitsu">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            {selectedYear}年（令和{selectedYear - 2018}年）の祝日
+          </h2>
+          <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {Object.entries(japaneseHolidays)
+                .filter(([dateKey]) => dateKey.startsWith(`${selectedYear}-`))
+                .sort(([a], [b]) => a.localeCompare(b))
+                .map(([dateKey, holidayName]) => {
+                  const [year, month, day] = dateKey.split('-').map(Number);
+                  const date = new Date(year, month - 1, day);
+                  const isSubstitute = holidayName.includes('振替') || holidayName.includes('国民の休日');
+                  return (
+                    <div key={dateKey} className="flex flex-col">
+                      <span className={`text-sm font-medium ${isSubstitute ? 'text-orange-600 dark:text-orange-400' : 'text-red-600 dark:text-red-400'}`}>
+                        {year}年{month}月{day}日
+                      </span>
+                      <span className="text-gray-900 dark:text-white">{holidayName}</span>
+                    </div>
+                  );
+                })}
+            </div>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
+              ※{new Date().getFullYear()}年{new Date().getMonth() + 1}月現在の最新情報です。
+            </p>
+          </div>
+        </div>
       </div>
     </ToolLayout>
   );
