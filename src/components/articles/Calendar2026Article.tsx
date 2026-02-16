@@ -153,39 +153,6 @@ export default function Calendar2026Article({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* 祝日一覧セクション - 月別カード */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-          2026年の祝日一覧
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {Object.entries(holidaysByMonth).map(([month, holidays]) => (
-            <div key={month} className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 border-b border-gray-200 dark:border-gray-700 pb-2">
-                {month}
-              </h3>
-              <div className="space-y-2">
-                {holidays.map((holiday, index) => (
-                  <div key={index} className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className={`font-medium ${holiday.isSubstitute ? 'text-orange-600 dark:text-orange-400' : 'text-red-600 dark:text-red-400'}`}>
-                        {holiday.date}
-                      </span>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">
-                        ({holiday.day})
-                      </span>
-                    </div>
-                    <span className="text-sm text-gray-900 dark:text-white">
-                      {holiday.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* 祝日一覧セクション - シンプルリスト */}
       <section className="mb-12" id="syukujitsu">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
