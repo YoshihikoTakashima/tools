@@ -175,6 +175,78 @@
         }
       }
     },
+    "calendar": {
+      "name": "Calendar",
+      "description": "Calendar with Japanese holidays",
+      "today": "Today",
+      "infoButtonLabel": "About Calendar",
+      "article": {
+        "title": "What is Calendar?",
+        "section1": {
+          "title": "Calendar Overview",
+          "content": "This is a yearly calendar tool that allows you to check Japanese holidays and rokuyō (six weekdays) at a glance. It also features a business days calculation and counter function, perfect for project deadline management and workday counting.\n\n\"Wait, is this day a holiday?\" \"When is taian this month?\" \"How many business days until the deadline?\"\nNo more pulling out your planner or searching on your phone.\n\nWith this tool, you can check holidays, rokuyō, and business days count for the entire year at once."
+        },
+        "section2": {
+          "title": "Tool Features",
+          "feature1": "Display all 12 months at once - View the entire year's calendar with a single scroll.",
+          "feature2": "Complete coverage of Japanese holidays - Accurately displays holidays and substitute holidays through 2030. Easy to check long weekends.",
+          "feature3": "Rokuyō filter function - Filter by Sensho, Tomobiki, Senbu, Butsumetsu, Taian, or Shakku with one click. Convenient for planning ceremonies.",
+          "feature4": "Business Days Calculation & Counter - Simply click the start and end dates to automatically calculate working days excluding weekends and holidays. Perfect for project deadline management, estimation creation, and workload calculation. Check your schedule based on actual working days in an instant."
+        },
+        "section3": {
+          "title": "Main Uses",
+          "use1": "Checking long holidays and extended weekends",
+          "use2": "Planning ceremony dates (checking rokuyō)",
+          "use3": "Business days calculation & project deadline management (workload estimation, schedule confirmation)",
+          "use4": "Answering simple questions like \"When is the next 3-day weekend?\""
+        },
+        "section4": {
+          "title": "How to Use Business Days Calculation",
+          "content": "The business days calculation feature makes project deadline management and workload estimation seamless.\n\nUsage is simple. Click the start date on the calendar, then click the end date. A popup will appear in the top-right corner, displaying the number of business days (working days excluding weekends and holidays) within the selected period.\n\nIt instantly solves common business questions like \"How many working days will this task take?\" \"How many business days until the deadline?\" \"What's the actual workday count for this project period?\" Perfect for estimation creation, workload management, project schedule confirmation, and delivery date calculation for various business scenarios."
+        },
+        "section5": {
+          "title": "About Rokuyō",
+          "content": "Rokuyō is an indicator of fortune and misfortune used in the Japanese calendar.\n\n・Taian: Good day for anything\n・Tomobiki: Good for celebrations (funerals avoided)\n・Sensho: Morning is auspicious\n・Senbu: Afternoon is auspicious\n・Butsumetsu: Day to be conservative\n・Shakku: Only around noon is auspicious\n\nClick a rokuyō tag to highlight corresponding dates in purple."
+        }
+      },
+      "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+      },
+      "weekdays": {
+        "sunday": "Sun",
+        "monday": "Mon",
+        "tuesday": "Tue",
+        "wednesday": "Wed",
+        "thursday": "Thu",
+        "friday": "Fri",
+        "saturday": "Sat"
+      },
+      "legend": {
+        "today": "Today",
+        "holiday": "Holiday",
+        "sunday": "Sunday",
+        "saturday": "Saturday",
+        "selected": "Selected"
+      },
+      "popup": {
+        "title": "Business Days Calculation",
+        "dateRange": "Date Range",
+        "businessDays": "Business Days",
+        "days": "days",
+        "note": "※Excluding weekends and holidays"
+      }
+    },
     "date-diff": {
       "name": "Date Difference",
       "description": "Calculate difference between two dates",

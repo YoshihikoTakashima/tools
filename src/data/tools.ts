@@ -35,6 +35,15 @@ export const tools: Tool[] = [
     createdAt: '2026-02-12',
   },
   {
+    id: 'calendar',
+    slug: 'calendar',
+    categorySlug: 'date',
+    isGlobal: true,
+    keywords: ['calendar', 'date', 'holiday', 'カレンダー', '日付', '祝日', '暦'],
+    createdAt: '2026-02-16',
+    isRecommended: true,
+  },
+  {
     id: 'date-diff',
     slug: 'date-diff',
     categorySlug: 'date',

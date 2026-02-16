@@ -9,6 +9,7 @@ import TaxCalculator from '@/src/components/tools/TaxCalculator';
 import DiscountCalculator from '@/src/components/tools/DiscountCalculator';
 import AgeCalculator from '@/src/components/tools/AgeCalculator';
 import HistoryCalculator from '@/src/components/tools/HistoryCalculator';
+import CalendarView from '@/src/components/tools/CalendarView';
 import DateDiff from '@/src/components/tools/DateDiff';
 import TextCounter from '@/src/components/tools/TextCounter';
 import RemoveLineBreaks from '@/src/components/tools/RemoveLineBreaks';
@@ -22,6 +23,7 @@ const toolComponents: Record<string, React.ComponentType> = {
   'discount-calculator': DiscountCalculator,
   'age-calculator': AgeCalculator,
   'history-calculator': HistoryCalculator,
+  'calendar': CalendarView,
   'date-diff': DateDiff,
   'text-counter': TextCounter,
   'remove-line-breaks': RemoveLineBreaks,
