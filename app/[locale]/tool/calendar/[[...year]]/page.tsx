@@ -8,6 +8,9 @@ import Breadcrumb from '@/src/components/Breadcrumb';
 import CalendarView from '@/src/components/tools/CalendarView';
 import ArticleList from '@/src/components/ArticleList';
 
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   // Auto-detect years from holiday data
   const years = getAvailableYears();
