@@ -2,164 +2,31 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import ToolLayout from '../ToolLayout';
 import ToolInfoArticle from '../ToolInfoArticle';
+import { japaneseHolidays } from '@/src/data/holidays';
 
-// Japanese holidays for 2024-2027
-const japaneseHolidays: Record<string, string> = {
-  // 2024
-  '2024-01-01': '元日',
-  '2024-01-08': '成人の日',
-  '2024-02-11': '建国記念の日',
-  '2024-02-12': '振替休日',
-  '2024-02-23': '天皇誕生日',
-  '2024-03-20': '春分の日',
-  '2024-04-29': '昭和の日',
-  '2024-05-03': '憲法記念日',
-  '2024-05-04': 'みどりの日',
-  '2024-05-05': 'こどもの日',
-  '2024-05-06': '振替休日',
-  '2024-07-15': '海の日',
-  '2024-08-11': '山の日',
-  '2024-08-12': '振替休日',
-  '2024-09-16': '敬老の日',
-  '2024-09-22': '秋分の日',
-  '2024-09-23': '振替休日',
-  '2024-10-14': 'スポーツの日',
-  '2024-11-03': '文化の日',
-  '2024-11-04': '振替休日',
-  '2024-11-23': '勤労感謝の日',
+interface CalendarViewProps {
+  initialYear: number;
+  locale: string;
+}
 
-  // 2025
-  '2025-01-01': '元日',
-  '2025-01-13': '成人の日',
-  '2025-02-11': '建国記念の日',
-  '2025-02-23': '天皇誕生日',
-  '2025-02-24': '振替休日',
-  '2025-03-20': '春分の日',
-  '2025-04-29': '昭和の日',
-  '2025-05-03': '憲法記念日',
-  '2025-05-04': 'みどりの日',
-  '2025-05-05': 'こどもの日',
-  '2025-05-06': '振替休日',
-  '2025-07-21': '海の日',
-  '2025-08-11': '山の日',
-  '2025-09-15': '敬老の日',
-  '2025-09-23': '秋分の日',
-  '2025-10-13': 'スポーツの日',
-  '2025-11-03': '文化の日',
-  '2025-11-23': '勤労感謝の日',
-  '2025-11-24': '振替休日',
-
-  // 2026
-  '2026-01-01': '元日',
-  '2026-01-12': '成人の日',
-  '2026-02-11': '建国記念の日',
-  '2026-02-23': '天皇誕生日',
-  '2026-03-20': '春分の日',
-  '2026-04-29': '昭和の日',
-  '2026-05-03': '憲法記念日',
-  '2026-05-04': 'みどりの日',
-  '2026-05-05': 'こどもの日',
-  '2026-05-06': '振替休日',
-  '2026-07-20': '海の日',
-  '2026-08-11': '山の日',
-  '2026-09-21': '敬老の日',
-  '2026-09-22': '振替休日',
-  '2026-09-23': '秋分の日',
-  '2026-10-12': 'スポーツの日',
-  '2026-11-03': '文化の日',
-  '2026-11-23': '勤労感謝の日',
-
-  // 2027
-  '2027-01-01': '元日',
-  '2027-01-11': '成人の日',
-  '2027-02-11': '建国記念の日',
-  '2027-02-23': '天皇誕生日',
-  '2027-03-21': '春分の日',
-  '2027-03-22': '振替休日',
-  '2027-04-29': '昭和の日',
-  '2027-05-03': '憲法記念日',
-  '2027-05-04': 'みどりの日',
-  '2027-05-05': 'こどもの日',
-  '2027-07-19': '海の日',
-  '2027-08-11': '山の日',
-  '2027-09-20': '敬老の日',
-  '2027-09-23': '秋分の日',
-  '2027-10-11': 'スポーツの日',
-  '2027-11-03': '文化の日',
-  '2027-11-23': '勤労感謝の日',
-
-  // 2028
-  '2028-01-01': '元日',
-  '2028-01-10': '成人の日',
-  '2028-02-11': '建国記念の日',
-  '2028-02-23': '天皇誕生日',
-  '2028-03-20': '春分の日',
-  '2028-04-29': '昭和の日',
-  '2028-05-03': '憲法記念日',
-  '2028-05-04': 'みどりの日',
-  '2028-05-05': 'こどもの日',
-  '2028-07-17': '海の日',
-  '2028-08-11': '山の日',
-  '2028-09-18': '敬老の日',
-  '2028-09-22': '秋分の日',
-  '2028-10-09': 'スポーツの日',
-  '2028-11-03': '文化の日',
-  '2028-11-23': '勤労感謝の日',
-
-  // 2029
-  '2029-01-01': '元日',
-  '2029-01-08': '成人の日',
-  '2029-02-11': '建国記念の日',
-  '2029-02-12': '振替休日',
-  '2029-02-23': '天皇誕生日',
-  '2029-03-20': '春分の日',
-  '2029-04-29': '昭和の日',
-  '2029-04-30': '振替休日',
-  '2029-05-03': '憲法記念日',
-  '2029-05-04': 'みどりの日',
-  '2029-05-05': 'こどもの日',
-  '2029-07-16': '海の日',
-  '2029-08-11': '山の日',
-  '2029-09-17': '敬老の日',
-  '2029-09-23': '秋分の日',
-  '2029-09-24': '振替休日',
-  '2029-10-08': 'スポーツの日',
-  '2029-11-03': '文化の日',
-  '2029-11-23': '勤労感謝の日',
-
-  // 2030
-  '2030-01-01': '元日',
-  '2030-01-14': '成人の日',
-  '2030-02-11': '建国記念の日',
-  '2030-02-23': '天皇誕生日',
-  '2030-03-20': '春分の日',
-  '2030-04-29': '昭和の日',
-  '2030-05-03': '憲法記念日',
-  '2030-05-04': 'みどりの日',
-  '2030-05-05': 'こどもの日',
-  '2030-05-06': '振替休日',
-  '2030-07-15': '海の日',
-  '2030-08-11': '山の日',
-  '2030-08-12': '振替休日',
-  '2030-09-16': '敬老の日',
-  '2030-09-23': '秋分の日',
-  '2030-10-14': 'スポーツの日',
-  '2030-11-03': '文化の日',
-  '2030-11-04': '振替休日',
-  '2030-11-23': '勤労感謝の日',
-};
-
-export default function CalendarView() {
+export default function CalendarView({ initialYear, locale }: CalendarViewProps) {
   const t = useTranslations('tools.calendar');
   const tc = useTranslations('common');
+  const router = useRouter();
 
-  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+  const [selectedYear, setSelectedYear] = useState(initialYear);
   const [selectionStart, setSelectionStart] = useState<Date | null>(null);
   const [selectionEnd, setSelectionEnd] = useState<Date | null>(null);
   const [showPopup, setShowPopup] = useState(false);
   const [selectedRokuyo, setSelectedRokuyo] = useState<string | null>(null);
+
+  // Update selectedYear when initialYear changes (when navigating to different year URLs)
+  useEffect(() => {
+    setSelectedYear(initialYear);
+  }, [initialYear]);
 
   const getDaysInMonth = (year: number, month: number) => {
     return new Date(year, month + 1, 0).getDate();
@@ -202,6 +69,15 @@ export default function CalendarView() {
     end.setHours(23, 59, 59, 999);
     date.setHours(12, 0, 0, 0);
     return date >= start && date <= end;
+  };
+
+  const isStartDate = (year: number, month: number, day: number): boolean => {
+    if (!selectionStart || selectionEnd) return false;
+    return (
+      selectionStart.getFullYear() === year &&
+      selectionStart.getMonth() === month &&
+      selectionStart.getDate() === day
+    );
   };
 
   const isBusinessDay = (date: Date): boolean => {
@@ -270,6 +146,7 @@ export default function CalendarView() {
       const holiday = japaneseHolidays[dateKey];
       const today = isToday(year, month, day);
       const inRange = isInRange(year, month, day);
+      const startDateOnly = isStartDate(year, month, day);
       const rokuyoMatch = isRokuyoMatch(year, month, day);
       const dayOfWeek = (firstDay + day - 1) % 7;
       const isSunday = dayOfWeek === 0;
@@ -281,7 +158,8 @@ export default function CalendarView() {
           key={`${month}-${day}`}
           className={`aspect-square p-0.5 text-center border border-gray-200 dark:border-gray-700 cursor-pointer select-none hover:bg-gray-100 dark:hover:bg-gray-700 ${
             rokuyoMatch ? 'bg-purple-200 dark:bg-purple-700/50 border-purple-500 border-2' :
-            inRange ? 'bg-yellow-200 dark:bg-yellow-700/40 border-yellow-500' :
+            inRange ? 'bg-yellow-200 dark:bg-yellow-700/40 border-yellow-500 border-2' :
+            startDateOnly ? 'bg-green-200 dark:bg-green-700/50 border-green-500 border-2' :
             today ? 'bg-blue-100 dark:bg-blue-900/30 border-blue-500' :
             holiday ? 'bg-red-50 dark:bg-red-900/20' : ''
           }`}
@@ -331,16 +209,28 @@ export default function CalendarView() {
   ];
 
   const handlePrevYear = () => {
-    setSelectedYear(selectedYear - 1);
+    const newYear = selectedYear - 1;
+    router.push(`/${locale}/tool/calendar/${newYear}`);
   };
 
   const handleNextYear = () => {
-    setSelectedYear(selectedYear + 1);
+    const newYear = selectedYear + 1;
+    router.push(`/${locale}/tool/calendar/${newYear}`);
   };
 
   const handleToday = () => {
     const today = new Date();
-    setSelectedYear(today.getFullYear());
+    const currentYear = today.getFullYear();
+    router.push(`/${locale}/tool/calendar`);
+  };
+
+  const handleYearChange = (year: number) => {
+    const currentYear = new Date().getFullYear();
+    if (year === currentYear) {
+      router.push(`/${locale}/tool/calendar`);
+    } else {
+      router.push(`/${locale}/tool/calendar/${year}`);
+    }
   };
 
   return (
@@ -411,7 +301,7 @@ export default function CalendarView() {
           <div className="flex gap-2">
             <select
               value={selectedYear}
-              onChange={(e) => setSelectedYear(Number(e.target.value))}
+              onChange={(e) => handleYearChange(Number(e.target.value))}
               className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
             >
               {Array.from({ length: 10 }, (_, i) => new Date().getFullYear() - 2 + i).map(
@@ -510,7 +400,11 @@ export default function CalendarView() {
             <span>{t('legend.saturday')}</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-yellow-200 dark:bg-yellow-700/40 border border-yellow-500 rounded"></div>
+            <div className="w-4 h-4 bg-green-200 dark:bg-green-700/50 border border-green-500 border-2 rounded"></div>
+            <span>{t('legend.startDate')}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 bg-yellow-200 dark:bg-yellow-700/40 border border-yellow-500 border-2 rounded"></div>
             <span>{t('legend.selected')}</span>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { tools } from '@/src/data/tools';
 import { categories } from '@/src/data/categories';
+import { articles } from '@/src/data/articles';
+import { getAvailableYears } from '@/src/data/holidays';
 
 const baseUrl = 'https://tools.realize-inc.co.jp';
 const locales = ['ja', 'en'];
@@ -26,14 +28,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // Tools
-  tools.forEach((tool) => {
-    locales.forEach((locale) => {
+  // Tools (excluding calendar which has its own yearly routes)
+  tools
+    .filter((tool) => tool.slug !== 'calendar')
+    .forEach((tool) => {
+      locales.forEach((locale) => {
+        routes.push({
+          url: `${baseUrl}/${locale}/tool/${tool.slug}`,
+          lastModified: new Date(tool.createdAt),
+          changeFrequency: 'weekly',
+          priority: tool.isRecommended ? 0.9 : 0.8,
+        });
+      });
+    });
+
+  // Calendar - yearly routes (auto-detect from holiday data)
+  const calendarYears = getAvailableYears();
+  locales.forEach((locale) => {
+    // Current year calendar (without year in URL)
+    routes.push({
+      url: `${baseUrl}/${locale}/tool/calendar`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    });
+
+    // Yearly calendars (only years with holiday data)
+    calendarYears.forEach((year) => {
       routes.push({
-        url: `${baseUrl}/${locale}/tool/${tool.slug}`,
-        lastModified: new Date(tool.createdAt),
-        changeFrequency: 'weekly',
-        priority: tool.isRecommended ? 0.9 : 0.8,
+        url: `${baseUrl}/${locale}/tool/calendar/${year}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: year === new Date().getFullYear() ? 0.9 : 0.7,
       });
     });
   });
@@ -57,6 +83,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,
+    });
+  });
+
+  // Articles
+  articles.forEach((article) => {
+    locales.forEach((locale) => {
+      routes.push({
+        url: `${baseUrl}/${locale}/articles/${article.slug}`,
+        lastModified: new Date(article.updatedAt || article.createdAt),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      });
     });
   });
 

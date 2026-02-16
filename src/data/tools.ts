@@ -84,6 +84,14 @@ export const tools: Tool[] = [
     createdAt: '2026-02-12',
   },
   {
+    id: 'csv2json',
+    slug: 'csv2json',
+    categorySlug: 'converter',
+    isGlobal: true,
+    keywords: ['csv', 'json', 'convert', 'parser', '変換', 'CSV'],
+    createdAt: '2026-02-16',
+  },
+  {
     id: 'base64',
     slug: 'base64',
     categorySlug: 'converter',

@@ -7,6 +7,8 @@ import { Grid, List } from 'lucide-react';
 import { categories } from '@/src/data/categories';
 import CategoryIcon from './CategoryIcon';
 import { tools } from '@/src/data/tools';
+import { articles } from '@/src/data/articles';
+import ArticleList from './ArticleList';
 
 export default function HomePage() {
   const t = useTranslations();
@@ -48,6 +50,16 @@ export default function HomePage() {
           ))}
         </div>
       </div>
+
+      {articles.length > 0 && (
+        <div className="mb-16">
+          <ArticleList
+            articles={articles.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())}
+            locale={locale}
+            limit={5}
+          />
+        </div>
+      )}
 
       <div>
         <div className="flex justify-between items-center mb-6">

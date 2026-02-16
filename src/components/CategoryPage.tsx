@@ -6,7 +6,9 @@ import { useState } from 'react';
 import { Grid, List } from 'lucide-react';
 import Breadcrumb from './Breadcrumb';
 import { tools } from '@/src/data/tools';
+import { articles } from '@/src/data/articles';
 import CategoryIcon from './CategoryIcon';
+import ArticleList from './ArticleList';
 
 interface CategoryPageProps {
   categorySlug: string;
@@ -18,6 +20,9 @@ export default function CategoryPage({ categorySlug }: CategoryPageProps) {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const categoryTools = tools.filter((tool) => tool.categorySlug === categorySlug);
+  const categoryArticles = articles
+    .filter((article) => article.categorySlug === categorySlug)
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-8">
@@ -94,6 +99,16 @@ export default function CategoryPage({ categorySlug }: CategoryPageProps) {
           </Link>
         ))}
       </div>
+
+      {categoryArticles.length > 0 && (
+        <div className="mt-8">
+          <ArticleList
+            articles={categoryArticles}
+            locale={locale}
+            limit={5}
+          />
+        </div>
+      )}
     </div>
   );
 }

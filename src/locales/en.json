@@ -237,6 +237,7 @@
         "holiday": "Holiday",
         "sunday": "Sunday",
         "saturday": "Saturday",
+        "startDate": "Start Date",
         "selected": "Selected"
       },
       "popup": {
@@ -283,6 +284,46 @@
       "prettify": "Prettify",
       "minify": "Minify",
       "invalidJson": "Invalid JSON format"
+    },
+    "csv2json": {
+      "name": "CSV to JSON Converter",
+      "description": "Convert CSV files to JSON format",
+      "csvInput": "CSV Input",
+      "jsonOutput": "JSON Output",
+      "delimiter": "Delimiter",
+      "comma": "Comma (,)",
+      "semicolon": "Semicolon (;)",
+      "tab": "Tab",
+      "hasHeader": "Include header row",
+      "download": "Download",
+      "placeholder": "Enter CSV data or upload a file...",
+      "infoButtonLabel": "What is CSV to JSON?",
+      "article": {
+        "title": "How to Use the CSV to JSON Converter",
+        "section1": {
+          "title": "About CSV to JSON Converter",
+          "content": "A free online tool that converts CSV files to JSON format. It runs entirely in your browser, ensuring security and privacy. Your data is never sent to a server. Supports CSV file uploads and text input, with customizable delimiters (comma, semicolon, tab). Converted JSON can be copied or downloaded as a file."
+        },
+        "section2": {
+          "title": "Key Features",
+          "feature1": "CSV file upload support (drag & drop, file selection)",
+          "feature2": "Manual CSV text input",
+          "feature3": "Delimiter selection (comma, semicolon, tab)",
+          "feature4": "Header row toggle (auto-generates column1, column2... if no header)",
+          "feature5": "Supports quoted fields and escaped quotes"
+        },
+        "section3": {
+          "title": "Use Cases",
+          "use1": "Data conversion for web applications and APIs",
+          "use2": "Convert Excel/spreadsheet exports to JSON for programmatic processing",
+          "use3": "Transform database export data to JSON for frontend consumption",
+          "use4": "Test data creation and mock data generation during development"
+        },
+        "section4": {
+          "title": "Usage Tips",
+          "content": "If your CSV file has a header row, check 'Include header row' to use header names as JSON keys. If unchecked, keys will be auto-generated as column1, column2, etc. If your CSV uses a non-standard delimiter (semicolon or tab instead of comma), select the appropriate option from 'Delimiter'. The tool handles quoted fields and escaped quotes (\"\") correctly, ensuring accurate conversion of complex CSV data."
+        }
+      }
     },
     "base64": {
       "name": "Base64 Converter",
@@ -445,5 +486,12 @@
     "description": "For questions, feedback, or bug reports about this service, please contact us using the form below.",
     "formButton": "Open Contact Form",
     "note": "※ Depending on the content of your inquiry, it may take some time to respond."
+  },
+  "articles": {
+    "title": "Related Articles",
+    "2026-calendar": {
+      "title": "2026 Calendar Complete Guide | Holidays, Business Days, and Rokuyō",
+      "description": "Complete guide to 2026 Japanese holidays, long weekends, business days count, and rokuyō calendar. Detailed monthly breakdown and planning information."
+    }
   }
 }
