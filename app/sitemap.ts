@@ -7,6 +7,8 @@ import { getAvailableYears } from '@/src/data/holidays';
 const baseUrl = 'https://tools.realize-inc.co.jp';
 const locales = ['ja', 'en'];
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
 

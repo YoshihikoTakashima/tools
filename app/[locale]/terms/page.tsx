@@ -1,8 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Breadcrumb from '@/src/components/Breadcrumb';
 
-export const runtime = 'edge';
-
 export default async function TermsPage({
   params,
 }: {
