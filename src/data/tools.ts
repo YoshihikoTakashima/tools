@@ -107,4 +107,12 @@ export const tools: Tool[] = [
     keywords: ['uuid', 'guid', 'generate', 'random', '生成'],
     createdAt: '2026-02-12',
   },
+  {
+    id: 'encoding-converter',
+    slug: 'encoding-converter',
+    categorySlug: 'converter',
+    isGlobal: true,
+    keywords: ['encoding', 'character', 'charset', 'convert', 'utf-8', 'shift_jis', 'euc-jp', '文字コード', 'エンコーディング', '変換'],
+    createdAt: '2026-02-18',
+  },
 ];

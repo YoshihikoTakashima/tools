@@ -405,6 +405,57 @@
           "content": "The History Calculator supports basic four arithmetic operations (addition, subtraction, multiplication, division) and can handle complex calculations using parentheses. Input supports both mouse/touch operations and keyboard operations. Numbers are automatically displayed with thousand separators for easy reading. Any number of calculation history items can be saved, and they can be individually deleted or cleared all at once as needed."
         }
       }
+    },
+    "encoding-converter": {
+      "name": "Character Encoding Converter",
+      "description": "Detect and convert file character encoding",
+      "uploadFile": "Choose File",
+      "detectedEncoding": "Detected Encoding",
+      "targetEncoding": "Target Encoding",
+      "sourceEncoding": "Source Encoding",
+      "overrideEncoding": "Manually specify encoding",
+      "preview": "Preview",
+      "convertedPreview": "Converted Preview",
+      "convertAndDownload": "Convert & Download",
+      "download": "Download",
+      "fileInfo": "File Info",
+      "fileName": "File Name",
+      "fileSize": "File Size",
+      "originalSize": "Original Size",
+      "convertedSize": "Converted Size",
+      "conversionComplete": "Conversion completed successfully",
+      "fileTooLarge": "File size exceeds 10MB. Please select a smaller file.",
+      "detectionFailed": "Could not auto-detect encoding. Please specify manually.",
+      "binaryFile": "This appears to be a binary file. Please select a text file.",
+      "conversionFailed": "Encoding conversion failed.",
+      "sameEncoding": "Source and target encodings are the same.",
+      "emptyFile": "File is empty.",
+      "infoButtonLabel": "About Encoding Converter",
+      "article": {
+        "title": "How to Use the Encoding Converter",
+        "section1": {
+          "title": "About Encoding Converter",
+          "content": "The Encoding Converter is a free online tool that detects and converts the character encoding of text files.\n\n\"I opened a CSV file in Excel and got garbled text...\"\n\"The data exported from an old system was in Shift_JIS...\"\n\nThis tool helps in such situations. Simply upload a file to auto-detect the encoding and convert it to UTF-8, Shift_JIS, or any other supported encoding."
+        },
+        "section2": {
+          "title": "Key Features",
+          "feature1": "Auto-detect encoding - Upload a file and instantly identify UTF-8, Shift_JIS, EUC-JP, ISO-2022-JP, and more",
+          "feature2": "One-click conversion - Select the target encoding and click to convert instantly",
+          "feature3": "Preview function - Preview text before and after conversion to check for garbled characters",
+          "feature4": "Manual override - Manually specify the source encoding if auto-detection is incorrect"
+        },
+        "section3": {
+          "title": "Use Cases",
+          "use1": "CSV file encoding conversion (e.g., Shift_JIS to UTF-8)",
+          "use2": "Unifying encoding of data exported from legacy systems",
+          "use3": "Changing source code file encoding for websites",
+          "use4": "Fixing garbled text in emails and text files"
+        },
+        "section4": {
+          "title": "About Privacy",
+          "content": "All processing is completed within your browser. Uploaded files are never sent to any server. You can use this tool with confidence."
+        }
+      }
     }
   },
   "search": {
