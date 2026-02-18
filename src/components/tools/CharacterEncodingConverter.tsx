@@ -308,19 +308,32 @@ export default function CharacterEncodingConverter() {
               </button>
             )}
             {manualSource && (
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  {t('sourceEncoding')}
-                </label>
-                <select
-                  value={sourceEncoding}
-                  onChange={(e) => setSourceEncoding(e.target.value as EncodingType)}
-                  className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm"
-                >
-                  {ENCODINGS.map((enc) => (
-                    <option key={enc.value} value={enc.value}>{enc.label}</option>
-                  ))}
-                </select>
+              <div className="flex items-end gap-2">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    {t('sourceEncoding')}
+                  </label>
+                  <select
+                    value={sourceEncoding}
+                    onChange={(e) => setSourceEncoding(e.target.value as EncodingType)}
+                    className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm"
+                  >
+                    {ENCODINGS.map((enc) => (
+                      <option key={enc.value} value={enc.value}>{enc.label}</option>
+                    ))}
+                  </select>
+                </div>
+                {detectedEncoding && detectedEncoding !== 'BINARY' && (
+                  <button
+                    onClick={() => {
+                      setManualSource(false);
+                      setSourceEncoding(detectedEncoding as EncodingType);
+                    }}
+                    className="px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    ✕
+                  </button>
+                )}
               </div>
             )}
           </div>
