@@ -92,14 +92,16 @@ export default function CharacterEncodingConverter() {
           }
 
           setDetectedEncoding(detectedStr);
-          setSourceEncoding(detectedStr as EncodingType);
+          // ASCII is a subset of UTF-8, treat as UTF-8 for conversion
+          const effectiveEncoding: EncodingType = detectedStr === 'ASCII' ? 'UTF8' : detectedStr as EncodingType;
+          setSourceEncoding(effectiveEncoding);
           setManualSource(false);
 
           // Generate preview
           try {
             const unicodeArray = Encoding.convert(uint8Array, {
               to: 'UNICODE',
-              from: detectedStr as LibEncoding,
+              from: effectiveEncoding as LibEncoding,
             });
             const previewText = Encoding.codeToString(unicodeArray);
             setPreview(previewText.slice(0, 2000));
@@ -110,8 +112,8 @@ export default function CharacterEncodingConverter() {
           setFileData(uint8Array);
           setFile(selectedFile);
 
-          // Default target to UTF-8 unless file is already UTF-8
-          if (detectedStr === 'UTF8') {
+          // Default target to UTF-8 unless file is already UTF-8/ASCII
+          if (detectedStr === 'UTF8' || detectedStr === 'ASCII') {
             setTargetEncoding('SJIS');
           } else {
             setTargetEncoding('UTF8');
@@ -213,6 +215,7 @@ export default function CharacterEncodingConverter() {
   };
 
   const getEncodingLabel = (encoding: string): string => {
+    if (encoding === 'ASCII') return 'ASCII (UTF-8互換)';
     const found = ALL_ENCODINGS.find(e => e.value === encoding);
     return found ? found.label : encoding;
   };
