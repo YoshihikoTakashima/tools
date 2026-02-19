@@ -115,4 +115,13 @@ export const tools: Tool[] = [
     keywords: ['encoding', 'character', 'charset', 'convert', 'utf-8', 'shift_jis', 'euc-jp', '文字コード', 'エンコーディング', '変換'],
     createdAt: '2026-02-18',
   },
+  {
+    id: 'ai-cost-simulator',
+    slug: 'ai-cost-simulator',
+    categorySlug: 'ai',
+    isGlobal: true,
+    keywords: ['ai', 'api', 'cost', 'price', 'token', 'gpt', 'claude', 'gemini', 'openai', 'anthropic', 'google', '料金', 'コスト', '見積もり', 'シミュレーター'],
+    createdAt: '2026-02-19',
+    isRecommended: true,
+  },
 ];

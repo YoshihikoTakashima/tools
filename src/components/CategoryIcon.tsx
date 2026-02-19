@@ -1,4 +1,4 @@
-import { Calculator, RefreshCw, FileText, Calendar, Zap, Sparkles, LucideIcon } from 'lucide-react';
+import { Calculator, RefreshCw, FileText, Calendar, Zap, Sparkles, Bot, LucideIcon } from 'lucide-react';
 
 interface CategoryIconProps {
   slug: string;
@@ -12,6 +12,7 @@ const iconMap: Record<string, LucideIcon> = {
   date: Calendar,
   generator: Zap,
   formatter: Sparkles,
+  ai: Bot,
 };
 
 export default function CategoryIcon({ slug, className = "w-8 h-8" }: CategoryIconProps) {

@@ -31,4 +31,9 @@ export const categories: Category[] = [
     slug: 'formatter',
     icon: '✨',
   },
+  {
+    id: 'ai',
+    slug: 'ai',
+    icon: '🤖',
+  },
 ];

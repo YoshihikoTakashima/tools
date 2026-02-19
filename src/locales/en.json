@@ -59,6 +59,10 @@
     "formatter": {
       "name": "Formatters",
       "description": "Format data beautifully"
+    },
+    "ai": {
+      "name": "AI Tools",
+      "description": "Useful AI-related tools"
     }
   },
   "tools": {
@@ -403,6 +407,67 @@
         "section6": {
           "title": "What This Tool Offers",
           "content": "The History Calculator supports basic four arithmetic operations (addition, subtraction, multiplication, division) and can handle complex calculations using parentheses. Input supports both mouse/touch operations and keyboard operations. Numbers are automatically displayed with thousand separators for easy reading. Any number of calculation history items can be saved, and they can be individually deleted or cleared all at once as needed."
+        }
+      }
+    },
+    "ai-cost-simulator": {
+      "name": "AI API Cost Simulator",
+      "description": "Compare and simulate API costs for major AI models",
+      "yen": "yen",
+      "model": "Model",
+      "inputUnitPrice": "Input price",
+      "outputUnitPrice": "Output price",
+      "usageSettings": "Usage Settings",
+      "tokenNote": "1 token ≈ 0.75 English words",
+      "inputTokensPerRequest": "Input tokens (per request)",
+      "outputTokensPerRequest": "Output tokens (per request)",
+      "monthlyRequests": "Monthly requests",
+      "times": "times",
+      "directInput": "Direct input",
+      "scenarioPresets": "Scenario Presets",
+      "presets": {
+        "chatbot": { "name": "Chatbot (Lightweight)", "desc": "Short answers to user questions" },
+        "summarize": { "name": "Article Summarization", "desc": "Read long text and extract key points" },
+        "rag": { "name": "RAG / Retrieval-Augmented", "desc": "Process context with search results" },
+        "creative": { "name": "Creative Writing", "desc": "Generate blog posts and email drafts" }
+      },
+      "estimatedMonthlyCost": "ESTIMATED MONTHLY COST",
+      "totalInputTokens": "Total Input Tokens",
+      "totalOutputTokens": "Total Output Tokens",
+      "modelComparison": "Model Cost Comparison",
+      "sameConditions": "Same conditions applied",
+      "tableModel": "Model",
+      "tableCost": "Monthly Cost",
+      "tableComparison": "vs",
+      "clickToApply": "Click a row to apply it to the main calculation",
+      "notesTitle": "Important Notes",
+      "note1": "Prices are estimates based on official announcements as of February 2026. Please check each provider's official site for the latest pricing.",
+      "note2": "Actual billing may vary depending on prompt caching (Gemini/Anthropic, etc.).",
+      "note3": "Japanese text typically consumes more tokens than English (approx. 1 character ≈ 1-1.3 tokens).",
+      "infoButtonLabel": "About AI API Cost Simulator",
+      "article": {
+        "title": "How to Use the AI API Cost Simulator",
+        "section1": {
+          "title": "About AI API Cost Simulator",
+          "content": "The AI API Cost Simulator is a tool that lets you easily compare and estimate API usage costs for major AI models (OpenAI GPT-4o, Google Gemini, Anthropic Claude, etc.).\n\n\"How much would it cost to call this model 10,000 times a month?\"\n\"Which is cheaper for the same use case, GPT-4o or Claude?\"\n\nThis tool answers such questions instantly. Just input token counts and request numbers to get monthly cost estimates in both USD and JPY."
+        },
+        "section2": {
+          "title": "Key Features",
+          "feature1": "Compare costs across 11 major AI models at once",
+          "feature2": "Easily adjust input/output tokens and monthly requests with sliders",
+          "feature3": "One-click scenario presets (chatbot, RAG, summarization, etc.)",
+          "feature4": "Exchange rate support for both JPY and USD display"
+        },
+        "section3": {
+          "title": "Use Cases",
+          "use1": "Budget estimation for new AI API projects",
+          "use2": "Cost comparison when switching models",
+          "use3": "Cost forecasting for scaling up",
+          "use4": "Creating cost documentation for internal approval"
+        },
+        "section4": {
+          "title": "About Privacy",
+          "content": "All calculations are performed in your browser. No data is sent to any server."
         }
       }
     },

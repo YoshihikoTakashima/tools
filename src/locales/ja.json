@@ -59,6 +59,10 @@
     "formatter": {
       "name": "整形ツール",
       "description": "データを見やすく整形"
+    },
+    "ai": {
+      "name": "AIツール",
+      "description": "AI関連の便利ツール"
     }
   },
   "tools": {
@@ -403,6 +407,67 @@
         "section6": {
           "title": "このツールでできること",
           "content": "履歴計算機は、基本的な四則演算（加算、減算、乗算、除算）に対応しており、括弧を使った複雑な計算も可能です。入力はマウス・タッチ操作とキーボード操作の両方に対応しています。数値は自動的に3桁区切りで表示され、見やすく整形されます。計算履歴は何件でも保存でき、必要に応じて個別削除または一括クリアができます。"
+        }
+      }
+    },
+    "ai-cost-simulator": {
+      "name": "AI APIコストシミュレーター",
+      "description": "主要AIモデルのAPI利用料金を比較シミュレーション",
+      "yen": "円",
+      "model": "使用モデル",
+      "inputUnitPrice": "入力単価",
+      "outputUnitPrice": "出力単価",
+      "usageSettings": "使用量の設定",
+      "tokenNote": "※ 1トークン ≒ 日本語1〜1.5文字",
+      "inputTokensPerRequest": "入力トークン (1リクエストあたり)",
+      "outputTokensPerRequest": "出力トークン (1リクエストあたり)",
+      "monthlyRequests": "月間リクエスト数",
+      "times": "回",
+      "directInput": "直接入力",
+      "scenarioPresets": "シナリオプリセット",
+      "presets": {
+        "chatbot": { "name": "チャットボット (軽量)", "desc": "ユーザーの質問に短く答える" },
+        "summarize": { "name": "記事要約・分析", "desc": "長い文章を読み込み、要点を抽出" },
+        "rag": { "name": "RAG / 検索拡張生成", "desc": "検索結果を含めたコンテキストを処理" },
+        "creative": { "name": "クリエイティブ執筆", "desc": "ブログ記事やメールの下書き生成" }
+      },
+      "estimatedMonthlyCost": "月額見積もりコスト",
+      "totalInputTokens": "月間入力トークン合計",
+      "totalOutputTokens": "月間出力トークン合計",
+      "modelComparison": "モデル別料金比較",
+      "sameConditions": "同じ条件で計算",
+      "tableModel": "モデル",
+      "tableCost": "月額コスト",
+      "tableComparison": "対",
+      "clickToApply": "リストをクリックするとメイン計算に反映されます",
+      "notesTitle": "注意点",
+      "note1": "価格は2026年2月時点の各社公式発表に基づく概算です。最新の価格は各社の公式サイトをご確認ください。",
+      "note2": "実際の請求はプロンプトキャッシュ（Gemini/Anthropic等）の利用有無により変動します。",
+      "note3": "日本語トークン数はモデルにより異なりますが、一般的に英語より多くのトークンを消費します（目安: 1文字≒1〜1.3トークン）。",
+      "infoButtonLabel": "AI APIコストシミュレーターとは",
+      "article": {
+        "title": "AI APIコストシミュレーターの使い方",
+        "section1": {
+          "title": "AI APIコストシミュレーターとは",
+          "content": "AI APIコストシミュレーターは、主要なAIモデル（OpenAI GPT-4o、Google Gemini、Anthropic Claude等）のAPI利用料金を簡単に比較・見積もりできるツールです。\n\n「このモデルを月1万回呼んだらいくらかかる？」\n「GPT-4oとClaude、同じ使い方だとどっちが安い？」\n\nそんな疑問にサクッと答えます。トークン数とリクエスト数を入力するだけで、月額コストを日本円で概算表示します。"
+        },
+        "section2": {
+          "title": "主な機能",
+          "feature1": "11の主要AIモデルの料金を一括比較",
+          "feature2": "入力/出力トークン・月間リクエスト数をスライダーで簡単調整",
+          "feature3": "シナリオプリセット（チャットボット、RAG、記事要約等）でワンクリック設定",
+          "feature4": "為替レート対応で日本円/USドル両方の表示"
+        },
+        "section3": {
+          "title": "活用シーン",
+          "use1": "新規プロジェクトのAI API予算見積もり",
+          "use2": "モデル乗り換え時のコスト比較",
+          "use3": "スケールアップ時のコスト予測",
+          "use4": "社内稟議用の料金資料作成"
+        },
+        "section4": {
+          "title": "プライバシーについて",
+          "content": "すべての計算はブラウザ内で完結します。入力データがサーバーに送信されることはありません。"
         }
       }
     },

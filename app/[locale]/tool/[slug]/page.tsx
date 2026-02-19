@@ -20,6 +20,7 @@ import Csv2Json from '@/src/components/tools/Csv2Json';
 import Base64Converter from '@/src/components/tools/Base64Converter';
 import UuidGenerator from '@/src/components/tools/UuidGenerator';
 import CharacterEncodingConverter from '@/src/components/tools/CharacterEncodingConverter';
+import AiCostSimulator from '@/src/components/tools/AiCostSimulator';
 
 const toolComponents: Record<string, React.ComponentType> = {
   'tax-calculator': TaxCalculator,
@@ -35,6 +36,7 @@ const toolComponents: Record<string, React.ComponentType> = {
   'base64': Base64Converter,
   'uuid-generator': UuidGenerator,
   'encoding-converter': CharacterEncodingConverter,
+  'ai-cost-simulator': AiCostSimulator,
 };
 
 export function generateStaticParams() {
